@@ -1,4 +1,15 @@
-# Hello World with React boilerplate
+# Fetching API Data with React.JS
+
+```
+useEffect(() => {
+		fetch("https://swapi.co/api/people/")
+			.then(resp => resp.json())
+			.then(data => {
+				setPeople(data.results);
+				console.log(data);
+			});
+	}, []);
+  ```
 <p>
   <a href="https://gitpod.io#https://github.com/4GeeksAcademy/react-hello.git"><img src="https://raw.githubusercontent.com/4GeeksAcademy/react-hello/master/open-in-gitpod.svg?sanitize=true" />
   </a>
