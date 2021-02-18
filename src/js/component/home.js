@@ -6,12 +6,18 @@ export function Home() {
 	const [movies, setMovies] = useState([]);
 
 	useEffect(() => {
-		fetch("https://swapi.co/api/people/")
+		fetch("https://swapi.dev/api/people/")
 			.then(resp => resp.json())
 			.then(data => {
 				setPeople(data.results);
 				console.log(data);
-			});
+			})
+			.catch(error =>
+				console.log(
+					"Hubo un problema con la petición Fetch:",
+					error.message
+				)
+			);
 	}, []);
 
 	return (
